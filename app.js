@@ -7,15 +7,15 @@ return Math.floor(Math.random()* max)
 let computerSelection = computerPlay(3)
 
 if (computerSelection == 0) {
-    computerSelection = "rock"  
+    computerSelection = "Rock"  
 } else if (computerSelection == 1) {
-    computerSelection = "paper"
+    computerSelection = "Paper"
 } else {
     computerSelection = "Scissors"
 }
 
 // hardcoded players selection
-const playerSelection = "rock"
+const playerSelection = "Rock"
 
 // function that runs conditionals to determine a winner
 // takes in 2 args
@@ -40,5 +40,11 @@ function playRound(playerSelection, computerSelection) {
 }
 
 // console.log(computerSelection)
-playRound(playerSelection, computerSelection)
-console.log(playerSelection, computerSelection)
+
+//loop function for 5 rouns
+
+for (let i = 0; i < 5; i++) {
+    playRound(playerSelection, computerSelection)
+}
+
+// console.log(playerSelection, computerSelection)

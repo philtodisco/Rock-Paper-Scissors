@@ -1,9 +1,7 @@
-
-
-//loop function for 5 rounds
+//loop functions for 5 rounds
 for (let i = 0; i < 5; i++) {
 
-    // get selection from computer
+// get selection from computer
 //get random number 0-2
 function computerPlay(max) {
     return Math.floor(Math.random()* max)
@@ -20,7 +18,7 @@ function computerPlay(max) {
     }
     
     // hardcoded player selection
-    const playerSelection = "Rock"
+    const playerSelection = window.prompt("Please enter: Rock, Paper, or Scissors")
     
     // function that runs conditionals to determine a winner
     // takes in 2 args
@@ -43,7 +41,6 @@ function computerPlay(max) {
             console.log("You win, scissor beats paper!")
         } else console.log("It's a tie!")
     }
-
     playRound(playerSelection, computerSelection)
     //console.log(playerSelection, computerSelection)
 }

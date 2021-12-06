@@ -37,31 +37,30 @@ function computerPlay(max) {
       computerSelection = computerSelection.toLowerCase()
       //determine winner using condtionals
       if (playerSelection == "rock" && computerSelection == "paper") {
-          console.log("You lose, paper beats rock!")
+        document.getElementById('round-results').textContent = "You lose, paper beats rock!"
           computerScore++
       } else if (playerSelection == "rock" && computerSelection == "scissors") {
-          console.log("You win, rock beats scissors!")
+        document.getElementById('round-results').textContent = "You win, rock beats scissors!"
           playerScore++
       } else if (playerSelection == "paper" && computerSelection == "rock") {
-          console.log("You win, paper beats rock!")
+        document.getElementById('round-results').textContent = "You win, paper beats rock!"
           playerScore++
       } else if (playerSelection == "paper" && computerSelection == "scissors") {
-          console.log("You lose, scissor beats paper!")
+        document.getElementById('round-results').textContent = "You lose, scissor beats paper!"
           computerScore++
       } else if (playerSelection == "scissors" && computerSelection == "rock") {
-          console.log("You lose, rock beats scissors!")
+        document.getElementById('round-results').textContent = "You lose, rock beats scissors!"
           computerScore++
       } else if (playerSelection == "scissors" && computerSelection == "paper") {
-          console.log("You win, scissor beats paper!")
-      } else console.log("It's a tie!")
-      console.log(`Player score: ${playerScore}\nComputer Score: ${computerScore}`)
-
+        document.getElementById('round-results').textContent = "You win, scissor beats paper!"
+      } else document.getElementById('round-results').textContent = ("It's a tie!")
   }
   //call function to play single round
   playRound(playerSelection, computerSelection)
-  
+
   document.getElementById('player-score').textContent = `Your Score: ${playerScore}`
   document.getElementById(`computer-score`).textContent = `Computer Score: ${computerScore}`
+  
     });
   });
 }

@@ -55,9 +55,13 @@ function computerPlay(max) {
           console.log("You win, scissor beats paper!")
       } else console.log("It's a tie!")
       console.log(`Player score: ${playerScore}\nComputer Score: ${computerScore}`)
+
   }
   //call function to play single round
   playRound(playerSelection, computerSelection)
+  
+  document.getElementById('player-score').textContent = `Your Score: ${playerScore}`
+  document.getElementById(`computer-score`).textContent = `Computer Score: ${computerScore}`
     });
   });
 }

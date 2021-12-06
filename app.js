@@ -2,14 +2,9 @@
 let playerScore = 0
 let computerScore = 0
 
-// //loop functions for 5 rounds
-// for (let i = 0; i < 5; i++) {
-
-
-
-
+// determine playerSelection using event listeners
 function playerSelectionFunc() {
-    // targets all <button> elements
+// targets all <button> elements
 const choices = document.querySelectorAll('button');
 // .forEach method to iterate through each button
 choices.forEach((button) => {
@@ -18,8 +13,7 @@ choices.forEach((button) => {
       let playerSelection = e.target.id
       console.log(playerSelection)
      
-      // get selection from computer
-//get random number 0-2
+// get selection from computer using random number
 function computerPlay(max) {
   return Math.floor(Math.random()* max)
   }
@@ -34,9 +28,6 @@ function computerPlay(max) {
       computerSelection = "Scissors"
   }
   console.log(computerSelection, "this is computer")
-  
-  // // prompts user for playerSelection
-  // const playerSelection = window.prompt("Please enter: Rock, Paper, or Scissors")
   
   // function that runs conditionals to determine a winner
   // takes in 2 args
@@ -65,18 +56,13 @@ function computerPlay(max) {
       } else console.log("It's a tie!")
       console.log(`Player score: ${playerScore}\nComputer Score: ${computerScore}`)
   }
-  //call function to play round
+  //call function to play single round
   playRound(playerSelection, computerSelection)
-// }
-
-
-
-
     });
   });
 }
-
 playerSelectionFunc()
+
 
 
 

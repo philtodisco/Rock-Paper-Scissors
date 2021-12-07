@@ -1,6 +1,8 @@
 //score variables
 let playerScore = 0
 let computerScore = 0
+let gameOver = false
+let roundResults = document.getElementById('round-results').textContent
 
 // determine playerSelection using event listeners
 function playerSelectionFunc() {
@@ -35,23 +37,23 @@ function computerPlay(max) {
       computerSelection = computerSelection.toLowerCase()
       //determine winner using condtionals
       if (playerSelection == "rock" && computerSelection == "paper") {
-        document.getElementById('round-results').textContent = "You lose this round, paper beats rock!"
+        roundResults = "You lose this round, paper beats rock!"
           computerScore++
       } else if (playerSelection == "rock" && computerSelection == "scissors") {
-        document.getElementById('round-results').textContent = "You win this round, rock beats scissors!"
+        roundResults = "You win this round, rock beats scissors!"
           playerScore++
       } else if (playerSelection == "paper" && computerSelection == "rock") {
-        document.getElementById('round-results').textContent = "You win this round, paper beats rock!"
+        roundResults = "You win this round, paper beats rock!"
           playerScore++
       } else if (playerSelection == "paper" && computerSelection == "scissors") {
-        document.getElementById('round-results').textContent = "You lose this round, scissor beats paper!"
+        roundResults = "You lose this round, scissor beats paper!"
           computerScore++
       } else if (playerSelection == "scissors" && computerSelection == "rock") {
-        document.getElementById('round-results').textContent = "You lose this round, rock beats scissors!"
+        roundResults = "You lose this round, rock beats scissors!"
           computerScore++
       } else if (playerSelection == "scissors" && computerSelection == "paper") {
-        document.getElementById('round-results').textContent = "You win this round, scissor beats paper!"
-      } else document.getElementById('round-results').textContent = ("It's a tie!")
+        roundResults = "You win this round, scissor beats paper!"
+      } else roundResults = ("It's a tie!")
   }
   //call function to play single round
   playRound(playerSelection, computerSelection)
@@ -63,12 +65,24 @@ function computerPlay(max) {
   let totalScore = playerScore + computerScore;
   if (playerScore == 5 && playerScore > computerScore) {
       document.getElementById('game-results').textContent = 'Game over, you win!'
+      gameOver = true    
   } else if (computerScore == 5 && playerScore < computerScore) {
       document.getElementById('game-results').textContent = 'Game over, you lose!'
+      gameOver = true  
   } 
+  
+  if (gameOver == true) {
+
+      const container1 = document.querySelector('.container1')
+      const playAgain = document.createElement('button')
+      playAgain.innerText = 'Play again?'
+      container1.appendChild(playAgain)
+      container1.removeChild('.choices')
+  }
     });
   });
 }
+
 playerSelectionFunc()
 
 

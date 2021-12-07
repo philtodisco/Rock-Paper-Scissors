@@ -11,7 +11,6 @@ choices.forEach((button) => {
     // for each one add a 'click' listener
     button.addEventListener('click', function(e) {
       let playerSelection = e.target.id
-      console.log(playerSelection)
      
 // get selection from computer using random number
 function computerPlay(max) {
@@ -27,7 +26,6 @@ function computerPlay(max) {
   } else {
       computerSelection = "Scissors"
   }
-  console.log(computerSelection, "this is computer")
   
   // function that runs conditionals to determine a winner
   // takes in 2 args

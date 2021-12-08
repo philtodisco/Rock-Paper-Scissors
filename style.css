@@ -1,0 +1,25 @@
+/* .game-area {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+} */
+
+/* .containter2 {
+    display: flex;
+} */
+
+.choices {
+    display: flex;
+    justify-content: center;
+}
+
+.container1 {
+    display: flex;
+    justify-content: center;
+}
+
+.container2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
